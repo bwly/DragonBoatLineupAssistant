@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paddlers.component.css']
 })
 export class PaddlersComponent implements OnInit {
+  paddler = 'John Smith';
 
   constructor() { }
 
