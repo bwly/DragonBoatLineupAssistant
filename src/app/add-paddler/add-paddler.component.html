@@ -1,0 +1,22 @@
+{{diagnostic}}
+<div class="container">
+  <h2>Paddler Details</h2>
+  <form #addPaddlerForm="ngForm" (ngSubmit)="onSubmit(); addPaddlerForm.reset();">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="weight">Current Weight:</label>
+      <input type="number" class="form-control" id="weight" required [(ngModel)]="model.weight" name="weight">
+    </div>
+
+    <div class="form-group">
+      <label for="side">Prefered Side:</label>
+      <input type="text" class="form-control" id="side" required [(ngModel)]="model.side" name="side">
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!addPaddlerForm.form.valid">Add</button>
+  </form>
+</div>

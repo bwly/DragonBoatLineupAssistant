@@ -6,17 +6,26 @@ import { AppComponent } from './app.component';
 import { PaddlersComponent } from './paddlers/paddlers.component';
 import { PaddlerDetailComponent } from './paddler-detail/paddler-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AppRoutingModule } from './/app-routing.module';
+import { AddPaddlerComponent } from './add-paddler/add-paddler.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         PaddlersComponent,
         PaddlerDetailComponent,
-        MessagesComponent
+        MessagesComponent,
+        AddPaddlerComponent
     ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        AngularFireDatabaseModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]
