@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Paddler } from '../paddler';
-import { PADDLERS } from '../mock-paddlers';
+import { PaddlerService } from '../paddler.service';
 
 @Component({
     selector: 'app-paddlers',
@@ -8,16 +8,20 @@ import { PADDLERS } from '../mock-paddlers';
     styleUrls: ['./paddlers.component.css']
 })
 export class PaddlersComponent implements OnInit {
-    paddlers = PADDLERS;
+    paddlers: Paddler[];
     selectedPaddler: Paddler;
 
-    constructor() { }
+    constructor(private paddlerService: PaddlerService) { }
 
     ngOnInit() {
+        this.getPaddlers();
     }
 
     onSelect(paddler: Paddler): void {
         this.selectedPaddler = paddler;
     }
 
+    getPaddlers(): void {
+        this.paddlerService.getPaddlers().subscribe(paddlers => this.paddlers = paddlers);
+    }
 }
