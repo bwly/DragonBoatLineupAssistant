@@ -1,0 +1,12 @@
+<div *ngIf="paddler">
+  <h2>Paddler Details</h2>
+  <div><span>name: </span>{{paddler.name}}</div>
+  <div><span>weight: </span>{{paddler.weight}}</div>
+  <div><span>side: </span>{{paddler.side}}</div>
+
+  <div>
+    <label>
+      <input [(ngModel)]="paddler.name" placeholder="name">
+    </label>
+  </div>
+</div>

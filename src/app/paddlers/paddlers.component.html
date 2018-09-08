@@ -1,4 +1,10 @@
-<h2>Paddler Details</h2>
-<div><span>name: </span>{{paddler.name}}</div>
-<div><span>weight: </span>{{paddler.weight}}</div>
-<div><span>side: </span>{{paddler.side}}</div>
+<!-- <app-paddler-detail [paddler]></app-paddler-detail> -->
+<!-- Need to make a list of paddlers and follow angular tutorial -->
+<h2>My Paddlers</h2>
+<ul class="paddlers">
+  <li *ngFor="let paddler of paddlers" (click)="onSelect(paddler)">
+    <span class="badge">{{paddler.name}}</span>
+  </li>
+</ul>
+
+<app-paddler-detail [paddler]="selectedPaddler"></app-paddler-detail>
