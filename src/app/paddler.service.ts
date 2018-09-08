@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Paddler } from './paddler';
-import { PADDLERS } from './mock-paddlers';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MessageService } from './message.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -9,12 +7,14 @@ import { AngularFireDatabase } from 'angularfire2/database';
   providedIn: 'root'
 })
 export class PaddlerService {
+  paddlers: Observable<any[]>;
 
   constructor(private messageService: MessageService, private database: AngularFireDatabase) { }
 
-  getPaddlers(): Observable<Paddler[]> {
+  getPaddlers(): Observable<any[]> {
     this.messageService.add('PaddlerService: fetched paddler');
-    return of(PADDLERS);
+    this.paddlers = this.database.list('Paddlers').valueChanges();
+    return this.paddlers;
   }
 
   addPaddler(firstName: string, lastName: string, weight: number, side: string): void {
