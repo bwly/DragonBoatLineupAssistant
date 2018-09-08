@@ -3,8 +3,13 @@
   <h2>Paddler Details</h2>
   <form #addPaddlerForm="ngForm" (ngSubmit)="onSubmit(); addPaddlerForm.reset();">
     <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+      <label for="name">First Name:</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="model.firstName" name="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Last Name:</label>
+      <input type="text" class="form-control" id="lastName" required [(ngModel)]="model.lastName" name="lastName">
     </div>
 
     <div class="form-group">

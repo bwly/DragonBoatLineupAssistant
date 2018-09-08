@@ -3,7 +3,7 @@
 <h2>My Paddlers</h2>
 <ul class="paddlers">
   <li *ngFor="let paddler of paddlers" (click)="onSelect(paddler)">
-    <span class="badge">{{paddler.name}}</span>
+    <span class="badge">{{paddler.firstName}} {{paddler.lastName}}</span>
   </li>
 </ul>
 

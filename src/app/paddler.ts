@@ -1,10 +1,12 @@
 export class Paddler {
-    name: string;
+    firstName: string;
+    lastName: string;
     weight: number;
     side: string;
 
-    constructor(name: string, weight: number, side: string) {
-        this.name = name;
+    constructor(firstName: string, lastName: string, weight: number, side: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.weight = weight;
         this.side = side;
     }
