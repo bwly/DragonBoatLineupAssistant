@@ -11,6 +11,7 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './/app-routing.module';
 import { AddPaddlerComponent } from './add-paddler/add-paddler.component';
+import { AddTeamsComponent } from './add-teams/add-teams.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { AddPaddlerComponent } from './add-paddler/add-paddler.component';
         PaddlersComponent,
         PaddlerDetailComponent,
         MessagesComponent,
-        AddPaddlerComponent
+        AddPaddlerComponent,
+        AddTeamsComponent
     ],
     imports: [
         BrowserModule,

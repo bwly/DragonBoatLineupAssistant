@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>New Team</h2>
+  <form #addTeamForm="ngForm" (ngSubmit)="onSubmit(); addTeamForm.reset();">
+    <div class="form-group">
+      <label for="name">Team Name:</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!addTeamForm.form.valid">Add</button>
+  </form>
+</div>

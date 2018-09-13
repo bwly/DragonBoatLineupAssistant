@@ -30,4 +30,10 @@ export class PaddlerService {
       this.messageService.add('PaddlerService: paddler has been added');
     });
   }
+
+  addTeam(team: object): void {
+    this.database.list('Teams').push(team).then(_ => {
+      this.messageService.add('PaddlerService: team has been added');
+    });
+  }
 }
