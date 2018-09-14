@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { TeamService } from '../team.service';
+import { TeamService } from '../services/team.service';
 
 @Component({
   selector: 'app-add-teams',
-  templateUrl: './add-teams.component.html',
-  styleUrls: ['./add-teams.component.css']
+  templateUrl: '../component_html/add-teams.component.html',
+  styleUrls: ['../component_css/add-teams.component.css']
 })
 export class AddTeamsComponent {
 

@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Paddler } from '../paddler';
+import { Paddler } from '../objects/paddler';
 
 @Component({
   selector: 'app-paddler-detail',
-  templateUrl: './paddler-detail.component.html',
-  styleUrls: ['./paddler-detail.component.css']
+  templateUrl: '../component_html/paddler-detail.component.html',
+  styleUrls: ['../component_css/paddler-detail.component.css']
 })
 export class PaddlerDetailComponent implements OnInit {
 

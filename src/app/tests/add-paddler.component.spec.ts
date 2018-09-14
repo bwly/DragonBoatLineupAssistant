@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddPaddlerComponent } from './add-paddler.component';
+import { AddPaddlerComponent } from '../component_modules/add-paddler.component';
 
 describe('AddPaddlerComponent', () => {
   let component: AddPaddlerComponent;

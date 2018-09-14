@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Paddler } from '../paddler';
-import { Team } from '../team';
-import { PaddlerService } from '../paddler.service';
-import { TeamService } from '../team.service';
+import { Paddler } from '../objects/paddler';
+import { Team } from '../objects/team';
+import { PaddlerService } from '../services/paddler.service';
+import { TeamService } from '../services/team.service';
 
 @Component({
   selector: 'app-add-paddler',
-  templateUrl: './add-paddler.component.html',
-  styleUrls: ['./add-paddler.component.css']
+  templateUrl: '../component_html/add-paddler.component.html',
+  styleUrls: ['../component_css/add-paddler.component.css']
 })
 export class AddPaddlerComponent implements OnInit {
   teams: Team[];
