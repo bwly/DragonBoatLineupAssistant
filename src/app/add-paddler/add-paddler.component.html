@@ -24,7 +24,7 @@
     <div class="form-group">
       <label for="team">Current Team:</label>
       <select class="form-control" id="team" required [(ngModel)]="model.team" name="team">
-        <option *ngFor="let teams of TEAMS" [value]="teams">{{teams}}</option>
+        <option *ngFor="let t of teams" [value]="t.name">{{t.name}}</option>
       </select>
     </div>
 
