@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Paddler } from '../paddler';
+import { Team } from '../team';
 import { PaddlerService } from '../paddler.service';
+import { TeamService } from '../team.service';
 
 @Component({
   selector: 'app-add-paddler',
@@ -8,10 +10,10 @@ import { PaddlerService } from '../paddler.service';
   styleUrls: ['./add-paddler.component.css']
 })
 export class AddPaddlerComponent implements OnInit {
-  teams: {name: string}[];
+  teams: Team[];
   model = new Paddler(null, null, null, null, null);
 
-  constructor(private paddlerService: PaddlerService) { }
+  constructor(private paddlerService: PaddlerService, private teamService: TeamService) { }
 
   ngOnInit() {
     this.getTeams();
@@ -22,6 +24,6 @@ export class AddPaddlerComponent implements OnInit {
   }
 
   getTeams(): void {
-    this.paddlerService.getTeams().subscribe(teams => this.teams = teams);
+    this.teamService.getTeams().subscribe(teams => this.teams = teams);
   }
 }

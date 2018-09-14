@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Paddler } from '../paddler';
-import { PaddlerService } from '../paddler.service';
+import { TeamService } from '../team.service';
 
 @Component({
   selector: 'app-add-teams',
@@ -9,11 +8,11 @@ import { PaddlerService } from '../paddler.service';
 })
 export class AddTeamsComponent {
 
-  constructor(private paddlerService: PaddlerService) { }
+  constructor(private teamService: TeamService) { }
 
   model = {name: null};
 
   onSubmit() {
-    this.paddlerService.addTeam(this.model);
+    this.teamService.addTeam(this.model);
   }
 }

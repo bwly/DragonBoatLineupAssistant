@@ -8,7 +8,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class PaddlerService {
   paddlers: Observable<any[]>;
-  teams: Observable<any[]>;
 
   constructor(private messageService: MessageService, private database: AngularFireDatabase) { }
 
@@ -29,18 +28,6 @@ export class PaddlerService {
 
     this.database.list('Paddlers').push(paddler).then(_ => {
       this.messageService.add('PaddlerService: paddler has been added');
-    });
-  }
-
-  getTeams(): Observable<any[]> {
-    this.messageService.add('PaddlerService: fetched team');
-    this.teams = this.database.list('Teams').valueChanges();
-    return this.teams;
-  }
-
-  addTeam(team: object): void {
-    this.database.list('Teams').push(team).then(_ => {
-      this.messageService.add('PaddlerService: team has been added');
     });
   }
 }
