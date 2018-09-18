@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Paddler } from '../paddler';
+import { Paddler } from '../../models/paddler';
 
 @Component({
   selector: 'app-paddler-detail',

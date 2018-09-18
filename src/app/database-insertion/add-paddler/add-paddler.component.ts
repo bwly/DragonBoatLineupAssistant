@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Paddler } from '../paddler';
-import { Team } from '../team';
-import { PaddlerService } from '../paddler.service';
-import { TeamService } from '../team.service';
+import { Paddler } from '../../models/paddler';
+import { Team } from '../../models/team';
+import { PaddlerService } from '../../services/paddler.service';
+import { TeamService } from '../../services/team.service';
 
 @Component({
   selector: 'app-add-paddler',

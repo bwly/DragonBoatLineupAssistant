@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Paddler } from '../paddler';
-import { PaddlerService } from '../paddler.service';
+import { Paddler } from '../../models/paddler';
+import { PaddlerService } from '../../services/paddler.service';
 
 @Component({
     selector: 'app-paddlers',
