@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Paddler } from '../objects/paddler';
-import { PaddlerService } from '../services/paddler.service';
+import { Paddler } from '../paddler';
+import { PaddlerService } from '../paddler.service';
 
 @Component({
     selector: 'app-paddlers',
-    templateUrl: '../component_html/paddlers.component.html',
-    styleUrls: ['../component_css/paddlers.component.css']
+    templateUrl: './paddlers.component.html',
+    styleUrls: ['./paddlers.component.css']
 })
 export class PaddlersComponent implements OnInit {
     paddlers: Paddler[];

@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { PaddlerService } from '../services/paddler.service';
+import { PaddlerService } from './paddler.service';
 
 describe('PaddlerService', () => {
   beforeEach(() => {
