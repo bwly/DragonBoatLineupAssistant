@@ -35,6 +35,7 @@ describe('PaddlerService gets and adds paddlers correctly to and from Firebase',
         databaseListReturnSpy.push.and.returnValue(pushMockOutput);
         database.list.and.returnValue(databaseListReturnSpy);
         paddlerService = TestBed.get(PaddlerService);
+        MessageServiceSpy.add.calls.reset();
     });
 
     describe('getPaddlers()', () => {
@@ -54,13 +55,15 @@ describe('PaddlerService gets and adds paddlers correctly to and from Firebase',
     describe('addPaddler()', () => {
         it('should call database.list().push() with the correct arguments and add the correct message to display', () => {
             const pushedObj = {};
-            const databaseListPushThenSpy = spyOn(pushMockOutput, 'then');
+            const databaseListPushThenSpy = spyOn(pushMockOutput, 'then').and.callThrough();
+            expectedMessage = 'PaddlerService: paddler has been added';
 
             paddlerService.addPaddler(pushedObj);
 
             expect(database.list).toHaveBeenCalledWith(tableName);
             expect(databaseListReturnSpy.push).toHaveBeenCalledWith(pushedObj);
             expect(databaseListPushThenSpy.calls.count()).toBe(1);
+            expect(MessageServiceSpy.add).toHaveBeenCalledWith(expectedMessage);
         });
     });
 });

@@ -35,6 +35,7 @@ describe('TeamService gets and adds teams correctly to and from Firebase', () =>
         databaseListReturnSpy.push.and.returnValue(pushMockOutput);
         database.list.and.returnValue(databaseListReturnSpy);
         teamService = TestBed.get(TeamService);
+        MessageServiceSpy.add.calls.reset();
     });
 
     describe('getTeams()', () => {
@@ -54,13 +55,15 @@ describe('TeamService gets and adds teams correctly to and from Firebase', () =>
     describe('addTeam()', () => {
         it('should call database.list().push() with the correct arguments and add the correct message to display', () => {
             const pushedObj = {};
-            const databaseListPushThenSpy = spyOn(pushMockOutput, 'then');
+            const databaseListPushThenSpy = spyOn(pushMockOutput, 'then').and.callThrough();
+            expectedMessage = 'TeamService: team has been added';
 
             teamService.addTeam(pushedObj);
 
             expect(database.list).toHaveBeenCalledWith(tableName);
             expect(databaseListReturnSpy.push).toHaveBeenCalledWith(pushedObj);
             expect(databaseListPushThenSpy.calls.count()).toBe(1);
+            expect(MessageServiceSpy.add).toHaveBeenCalledWith(expectedMessage);
         });
     });
 });
