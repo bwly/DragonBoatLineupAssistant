@@ -3,15 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { PaddlersComponent } from './paddlers/paddlers.component';
-import { PaddlerDetailComponent } from './paddler-detail/paddler-detail.component';
+import { PaddlersComponent } from './paddler-display/paddlers/paddlers.component';
+import { PaddlerDetailComponent } from './paddler-display/paddler-detail/paddler-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './/app-routing.module';
-import { AddPaddlerComponent } from './add-paddler/add-paddler.component';
-import { AddTeamsComponent } from './add-teams/add-teams.component';
+import { AddPaddlerComponent } from './database-insertion/add-paddler/add-paddler.component';
+import { AddTeamsComponent } from './database-insertion/add-teams/add-teams.component';
 
 @NgModule({
     declarations: [
