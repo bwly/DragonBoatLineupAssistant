@@ -21,7 +21,7 @@ export class AddPaddlerComponent implements OnInit {
   }
 
   onSubmit() {
-    this.paddlerService.addPaddler(this.model.firstName, this.model.lastName, this.model.weight, this.model.side, this.model.team);
+    this.paddlerService.addPaddler(this.model);
   }
 
   getTeams(): void {

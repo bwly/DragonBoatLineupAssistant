@@ -17,15 +17,7 @@ export class PaddlerService {
     return this.paddlers;
   }
 
-  addPaddler(firstName: string, lastName: string, weight: number, side: string, team: string): void {
-    const paddler = {
-      firstName: firstName,
-      lastName: lastName,
-      weight: weight,
-      side: side,
-      team: team
-    };
-
+  addPaddler(paddler: object): void {
     this.database.list('Paddlers').push(paddler).then(_ => {
       this.messageService.add('PaddlerService: paddler has been added');
     });
