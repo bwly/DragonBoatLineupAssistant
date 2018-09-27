@@ -6,7 +6,7 @@ import { PaddlerService } from '../../services/paddler.service';
 import { Paddler } from '../../models/paddler';
 
 
-describe('PaddlersComponent', () => {
+describe('PaddlersComponent class', () => {
     let paddlersComponent: PaddlersComponent;
     let fixture: ComponentFixture<PaddlersComponent>;
     const mockedPaddlersInDB = [
@@ -98,9 +98,5 @@ describe('PaddlersComponent', () => {
 
             expect(paddlersComponent.paddlers).toEqual(expectedPaddlerList);
         });
-    });
-
-    it('should create', () => {
-        expect(paddlersComponent).toBeTruthy();
     });
 });

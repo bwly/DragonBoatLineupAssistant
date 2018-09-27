@@ -30,10 +30,12 @@ export class AddPaddlerComponent implements OnInit {
 
   sortTeamsByName(teamOne: Team, teamTwo: Team): number {
     let returnValue;
+    const teamOneName = teamOne.name.toLowerCase();
+    const teamTwoName = teamTwo.name.toLowerCase();
 
-    if (teamOne.name < teamTwo.name) {
+    if (teamOneName < teamTwoName) {
       returnValue = -1;
-    } else if (teamOne.name > teamTwo.name) {
+    } else if (teamOneName > teamTwoName) {
       returnValue = 1;
     } else {
       returnValue = 0;
