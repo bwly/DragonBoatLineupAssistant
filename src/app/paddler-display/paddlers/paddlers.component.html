@@ -1,8 +1,22 @@
-<h2>My Paddlers</h2>
-<ul class="paddlers">
-  <li *ngFor="let paddler of paddlers" (click)="onSelect(paddler)">
-    <span class="badge">{{paddler.firstName}} {{paddler.lastName}}</span>
-  </li>
-</ul>
+<table class="table table-hover">
+  <thead>
+    <h4>My Paddlers</h4>
+  </thead>
 
-<app-paddler-detail [paddler]="selectedPaddler"></app-paddler-detail>
+  <tbody>
+    <ol class="paddlers">
+      <tr *ngFor="let paddler of paddlers">
+        <td>
+          <li>
+            {{paddler.firstName}} {{paddler.lastName}}
+          </li>
+        </td>
+
+        <td>
+          <a [routerLink]="['/paddlerDetail', paddler.id]" class="btn btn-primary">View Details</a>
+        </td>
+      </tr>
+    </ol>
+  </tbody>
+</table>
+

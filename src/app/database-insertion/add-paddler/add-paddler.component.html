@@ -18,7 +18,9 @@
 
     <div class="form-group">
       <label for="side">Prefered Side:</label>
-      <input type="text" class="form-control" id="side" required [(ngModel)]="model.side" name="side">
+      <select class="form-control" id="side" required [(ngModel)]="model.side" name="side">
+        <option *ngFor="let s of sides" [value]="s">{{s}}</option>
+      </select>
     </div>
 
     <div class="form-group">

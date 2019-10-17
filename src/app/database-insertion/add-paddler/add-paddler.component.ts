@@ -12,6 +12,7 @@ import { TeamService } from '../../services/team.service';
 export class AddPaddlerComponent implements OnInit {
   teams: Team[];
   model = new Paddler(null, null, null, null, null);
+  sides = ['Right', 'Left', 'Both'];
 
   constructor(private paddlerService: PaddlerService,
               private teamService: TeamService) { }

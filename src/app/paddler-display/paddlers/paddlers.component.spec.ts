@@ -22,7 +22,7 @@ describe('PaddlersComponent class', () => {
             };
         }
     };
-    let expectedPaddlerList;
+    // let expectedPaddlerList;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -43,60 +43,60 @@ describe('PaddlersComponent class', () => {
         fixture.detectChanges();
     });
 
-    describe('onSelect()', () => {
-        it('should set selectedPaddler to be the paddler passed into onSelect when selectedPaddler is undefined', () => {
-            expect(paddlersComponent.selectedPaddler).toBeUndefined();
-            const expectedPaddler = new Paddler(
-                'Benson',
-                'Ly',
-                180,
-                'right',
-                'UCSD'
-            );
+    // describe('onSelect()', () => {
+    //     it('should set selectedPaddler to be the paddler passed into onSelect when selectedPaddler is undefined', () => {
+    //         expect(paddlersComponent.selectedPaddler).toBeUndefined();
+    //         const expectedPaddler = new Paddler(
+    //             'Benson',
+    //             'Ly',
+    //             180,
+    //             'right',
+    //             'UCSD'
+    //         );
 
-            paddlersComponent.onSelect(expectedPaddler);
+    //         paddlersComponent.onSelect(expectedPaddler);
 
-            expect(paddlersComponent.selectedPaddler).toEqual(expectedPaddler);
-        });
+    //         expect(paddlersComponent.selectedPaddler).toEqual(expectedPaddler);
+    //     });
 
-        it('should set selectedPaddler to be the paddler passed into onSelect when selectedPaddler is defined', () => {
-            const somePaddler = new Paddler(
-                'Initial',
-                'Test',
-                10,
-                'both',
-                'Cal'
-            );
-            paddlersComponent.selectedPaddler = somePaddler;
-            expect(paddlersComponent.selectedPaddler).toEqual(somePaddler);
-            const expectedPaddler = new Paddler(
-                'Benson',
-                'Ly',
-                180,
-                'right',
-                'UCSD'
-            );
+    //     it('should set selectedPaddler to be the paddler passed into onSelect when selectedPaddler is defined', () => {
+    //         const somePaddler = new Paddler(
+    //             'Initial',
+    //             'Test',
+    //             10,
+    //             'both',
+    //             'Cal'
+    //         );
+    //         paddlersComponent.selectedPaddler = somePaddler;
+    //         expect(paddlersComponent.selectedPaddler).toEqual(somePaddler);
+    //         const expectedPaddler = new Paddler(
+    //             'Benson',
+    //             'Ly',
+    //             180,
+    //             'right',
+    //             'UCSD'
+    //         );
 
-            paddlersComponent.onSelect(expectedPaddler);
+    //         paddlersComponent.onSelect(expectedPaddler);
 
-            expect(paddlersComponent.selectedPaddler).toEqual(expectedPaddler);
-        });
-    });
+    //         expect(paddlersComponent.selectedPaddler).toEqual(expectedPaddler);
+    //     });
+    // });
 
-    describe('getPaddlers()', () => {
-        it('should update paddlers array', () => {
-            expect(paddlersComponent.paddlers).toEqual(mockedPaddlersInDB);
-            const paddlerToInsert = new Paddler('Sample', 'Paddler', 0, 'side', 'team');
-            expectedPaddlerList = [
-                new Paddler('Benson', 'Ly', 185, 'both', 'UCSD'),
-                new Paddler('Bob', 'Smith', 333, 'left', 'a team'),
-                paddlerToInsert
-            ];
-            mockedPaddlersInDB.push(paddlerToInsert);
+    // describe('getPaddlers()', () => {
+    //     it('should update paddlers array', () => {
+    //         expect(paddlersComponent.paddlers).toEqual(mockedPaddlersInDB);
+    //         const paddlerToInsert = new Paddler('Sample', 'Paddler', 0, 'side', 'team');
+    //         expectedPaddlerList = [
+    //             new Paddler('Benson', 'Ly', 185, 'both', 'UCSD'),
+    //             new Paddler('Bob', 'Smith', 333, 'left', 'a team'),
+    //             paddlerToInsert
+    //         ];
+    //         mockedPaddlersInDB.push(paddlerToInsert);
 
-            paddlersComponent.getPaddlers();
+    //         paddlersComponent.getPaddlers();
 
-            expect(paddlersComponent.paddlers).toEqual(expectedPaddlerList);
-        });
-    });
+    //         expect(paddlersComponent.paddlers).toEqual(expectedPaddlerList);
+    //     });
+    // });
 });

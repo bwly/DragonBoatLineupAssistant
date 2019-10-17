@@ -1,25 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { MessageService } from './message.service';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Paddler } from '../models/paddler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaddlerService {
-  paddlers: Observable<any[]>;
+  paddlers: Observable<Paddler[]>;
+  paddler: Observable<Paddler>;
+  databaseName = 'Paddlers';
 
-  constructor(private messageService: MessageService, private database: AngularFireDatabase) { }
+  constructor(private database: AngularFireDatabase) { }
 
   getPaddlers(): Observable<any[]> {
-    this.messageService.add('PaddlerService: fetched paddler');
-    this.paddlers = this.database.list('Paddlers').valueChanges();
+    this.paddlers = <Observable<Paddler[]>>this.database.list(this.databaseName).valueChanges();
     return this.paddlers;
   }
 
+  getPaddler(id: string): Observable<Paddler> {
+    this.paddler = <Observable<Paddler>>this.database.object(this.databaseName + '/' + id).valueChanges();
+    return this.paddler;
+  }
+
   addPaddler(paddler: object): void {
-    this.database.list('Paddlers').push(paddler).then(_ => {
-      this.messageService.add('PaddlerService: paddler has been added');
+    this.database.list(this.databaseName).push(paddler).then(value => {
+      this.database.list(this.databaseName).update(value.key, {id: value.key});
     });
   }
 }

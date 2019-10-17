@@ -9,7 +9,6 @@ import { PaddlerService } from '../../services/paddler.service';
 })
 export class PaddlersComponent implements OnInit {
     paddlers: Paddler[];
-    selectedPaddler: Paddler;
 
     constructor(private paddlerService: PaddlerService) { }
 
@@ -17,11 +16,28 @@ export class PaddlersComponent implements OnInit {
         this.getPaddlers();
     }
 
-    onSelect(paddler: Paddler): void {
-        this.selectedPaddler = paddler;
+    getPaddlers(): void {
+        this.paddlerService.getPaddlers().subscribe(paddlers => this.paddlers = paddlers.sort(this.sortPaddlersByName));
     }
 
-    getPaddlers(): void {
-        this.paddlerService.getPaddlers().subscribe(paddlers => this.paddlers = paddlers);
-    }
+    sortPaddlersByName(PaddlerOne: Paddler, PaddlerTwo: Paddler): number {
+        let returnValue;
+        const paddlerOneName = [PaddlerOne.firstName.toLowerCase(), PaddlerOne.lastName.toLowerCase()];
+        const paddlerTwoName = [PaddlerTwo.firstName.toLowerCase(), PaddlerTwo.lastName.toLowerCase()];
+
+        if (paddlerOneName[0] < paddlerTwoName[0]) {
+          returnValue = -1;
+        } else if (paddlerOneName[0] > paddlerTwoName[0]) {
+          returnValue = 1;
+        } else {
+            if (paddlerOneName[1] < paddlerTwoName[1]) {
+                returnValue = -1;
+            } else if (paddlerOneName[1] < paddlerTwoName[1]) {
+                returnValue = 1;
+            } else {
+                returnValue = 0;
+            }
+        }
+        return returnValue;
+      }
 }

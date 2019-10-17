@@ -4,6 +4,7 @@ export class Paddler {
     weight: number;
     side: string;
     team: string;
+    id: string;
 
     constructor(firstName: string, lastName: string, weight: number, side: string, team: string) {
         this.firstName = firstName;
