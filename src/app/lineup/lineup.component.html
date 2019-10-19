@@ -1,0 +1,207 @@
+<!-- <div class="paddler empty" ng-class="{empty: !data.team[slot].unit}" dropzone="slot" attach-pricker="" popover-placement-"bottom" 
+popover-trigger="mouseenter" popover-title="" uib-popover-template="'views/fragments/popover.html'" popover-append-to-body="'true'" drop-targot="slot"> -->
+
+<table class="table">
+    <thead>
+      <h4>My Lineup</h4>
+      <tr>
+          <td align="right">Row</td>
+          <td align="right">Left Side Weight</td>
+          <td>Left Side Paddler</td>
+          <td>Right Side Paddler</td>
+          <td>Right Side Weight</td>
+      </tr>
+    </thead>
+  
+    <tbody>
+        <tr>
+            <td align="right">1</td>
+            <td align="right">{{weightLeft[0]}}</td>
+            <td>
+                <select class="form-control" #paddler1l name="paddler1l" (change)="setWeights(paddler1l.value, 'L', 1)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" #paddler1r name="paddler1r" (change)="setWeights(paddler1r.value, 'R', 1)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>{{weightRight[0]}}</td> 
+        </tr>
+
+        <tr>
+            <td align="right">2</td>
+            <td align="right">{{weightLeft[1]}}</td>
+            <td>
+                <select class="form-control" #paddler2l name="paddler2l" (change)="setWeights(paddler2l.value, 'L', 2)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" #paddler2r name="paddler2r" (change)="setWeights(paddler2r.value, 'R', 2)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>{{weightRight[1]}}</td> 
+        </tr>
+
+        <tr>
+            <td align="right">3</td>
+            <td align="right">{{weightLeft[2]}}</td>
+            <td>
+                <select class="form-control" #paddler3l name="paddler3l" (change)="setWeights(paddler3l.value, 'L', 3)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" #paddler3r name="paddler3r" (change)="setWeights(paddler3r.value, 'R', 3)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>{{weightRight[2]}}</td> 
+        </tr>
+
+        <tr>
+            <td align="right">4</td>
+            <td align="right">{{weightLeft[3]}}</td>
+            <td>
+                <select class="form-control" #paddler4l name="paddler4l" (change)="setWeights(paddler4l.value, 'L', 4)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" #paddler4r name="paddler4r" (change)="setWeights(paddler2r.value, 'R', 4)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>{{weightRight[3]}}</td> 
+        </tr>
+
+        <tr>
+            <td align="right">5</td>
+            <td align="right">{{weightLeft[4]}}</td>
+            <td>
+                <select class="form-control" #paddler5l name="paddler5l" (change)="setWeights(paddler5l.value, 'L', 5)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" #paddler5r name="paddler5r" (change)="setWeights(paddler5r.value, 'R', 5)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>{{weightRight[4]}}</td> 
+        </tr>
+
+        <tr>
+            <td align="right">6</td>
+            <td align="right">{{weightLeft[5]}}</td>
+            <td>
+                <select class="form-control" #paddler6l name="paddler6l" (change)="setWeights(paddler6l.value, 'L', 6)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" #paddler6r name="paddler6r" (change)="setWeights(paddler6r.value, 'R', 6)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>{{weightRight[5]}}</td> 
+        </tr>
+
+        <tr>
+            <td align="right">7</td>
+            <td align="right">{{weightLeft[6]}}</td>
+            <td>
+                <select class="form-control" #paddler7l name="paddler7l" (change)="setWeights(paddler7l.value, 'L', 7)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" #paddler7r name="paddler7r" (change)="setWeights(paddler7r.value, 'R', 7)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>{{weightRight[6]}}</td> 
+        </tr>
+
+        <tr>
+            <td align="right">8</td>
+            <td align="right">{{weightLeft[7]}}</td>
+            <td>
+                <select class="form-control" #paddler8l name="paddler8l" (change)="setWeights(paddler8l.value, 'L', 8)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" #paddler8r name="paddler8r" (change)="setWeights(paddler8r.value, 'R', 8)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>{{weightRight[7]}}</td> 
+        </tr>
+
+        <tr>
+            <td align="right">9</td>
+            <td align="right">{{weightLeft[8]}}</td>
+            <td>
+                <select class="form-control" #paddler9l name="paddler9l" (change)="setWeights(paddler9l.value, 'L', 9)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" #paddler9r name="paddler9r" (change)="setWeights(paddler9r.value, 'R', 9)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>{{weightRight[8]}}</td> 
+        </tr>
+
+        <tr>
+            <td align="right">10</td>
+            <td align="right">{{weightLeft[9]}}</td>
+            <td>
+                <select class="form-control" #paddler10l name="paddler10l" (change)="setWeights(paddler10l.value, 'L', 10)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>
+                <select class="form-control" #paddler10r name="paddler10r" (change)="setWeights(paddler10r.value, 'R', 10)">
+                    <option hidden disabled selected value></option>
+                    <option *ngFor="let paddler of paddlers" [value]="paddler.weight">{{paddler.firstName}} {{paddler.lastName}}</option>
+                </select>
+            </td>
+            <td>{{weightRight[9]}}</td> 
+        </tr>
+
+        <tr>
+            <td align="right">Total Weight:</td>
+            <td align="right">{{leftTotal}}</td>
+            <td></td>
+            <td></td>
+            <td>{{rightTotal}}</td>
+        </tr>
+    </tbody>
+  </table>
+  
+  

@@ -14,6 +14,7 @@ import { AddTeamsComponent } from './database-insertion/add-teams/add-teams.comp
 import { PaddlerService } from './services/paddler.service';
 import { TeamService } from './services/team.service';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { LineupComponent } from './lineup/lineup.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
         PaddlerDetailComponent,
         AddPaddlerComponent,
         AddTeamsComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        LineupComponent
     ],
     imports: [
         BrowserModule,
