@@ -28,4 +28,7 @@ export class PaddlerService {
       this.database.list(this.databaseName).update(value.key, {id: value.key});
     });
   }
+  updatePaddler(id: string, paddler: object): void {
+    this.database.list(this.databaseName).update(id, paddler);
+  }
 }

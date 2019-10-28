@@ -6,6 +6,7 @@ import { AddTeamsComponent } from './database-insertion/add-teams/add-teams.comp
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PaddlerDetailComponent } from './paddler-display/paddler-detail/paddler-detail.component';
 import { LineupComponent } from './lineup/lineup.component';
+import { EditPaddlerComponent } from './database-insertion/edit-paddler/edit-paddler.component';
 
 const routes: Routes = [
   { path: 'paddlers', component: PaddlersComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'addTeam', component: AddTeamsComponent },
   { path: '', component: WelcomeComponent },
   { path: 'paddlerDetail/:id', component: PaddlerDetailComponent },
-  { path: 'lineup', component: LineupComponent }
+  { path: 'lineup', component: LineupComponent },
+  { path: 'editPaddler/:id', component: EditPaddlerComponent }
 ];
 
 @NgModule({
