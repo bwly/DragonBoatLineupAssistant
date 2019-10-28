@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditPaddlerComponent implements OnInit {
   teams: Team[];
-  model: Paddler;
+  model = new Paddler(null, null, null, null, null);
   sides = ['Right', 'Left', 'Both'];
   id: string;
 

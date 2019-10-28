@@ -11,6 +11,8 @@ export class LineupComponent implements OnInit {
   paddlers: Paddler[];
   weightLeft: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   weightRight: number[] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  leftPaddlers: Paddler[] = [null, null, null, null, null, null, null, null, null, null];
+  rightPaddlers: Paddler[] = [null, null, null, null, null, null, null, null, null, null];
   leftTotal = 0;
   rightTotal = 0;
 
@@ -45,12 +47,29 @@ export class LineupComponent implements OnInit {
     return returnValue;
   }
 
-  setWeights(weight: number, side: string, row: number): void {
+  setPaddler(side: string, row: number): void {
+    let paddler;
+    let weight;
     if (side === 'L') {
+      paddler = this.leftPaddlers[row - 1];
+    } else {
+      paddler = this.rightPaddlers[row - 1];
+    }
+    console.log(paddler);
+
+    if (paddler) {
+      weight = paddler.weight;
+    } else {
+      weight = 0;
+    }
+
+    if (side === 'L') {
+      console.log('left');
       this.leftTotal -= this.weightLeft[row - 1];
       this.weightLeft[row - 1] = +weight;
       this.leftTotal += +weight;
     } else {
+      console.log('right');
       this.rightTotal -= this.weightRight[row - 1];
       this.weightRight[row - 1] = +weight;
       this.rightTotal += +weight;
