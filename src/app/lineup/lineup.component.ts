@@ -55,7 +55,6 @@ export class LineupComponent implements OnInit {
     } else {
       paddler = this.rightPaddlers[row - 1];
     }
-    console.log(paddler);
 
     if (paddler) {
       weight = paddler.weight;
@@ -64,12 +63,10 @@ export class LineupComponent implements OnInit {
     }
 
     if (side === 'L') {
-      console.log('left');
       this.leftTotal -= this.weightLeft[row - 1];
       this.weightLeft[row - 1] = +weight;
       this.leftTotal += +weight;
     } else {
-      console.log('right');
       this.rightTotal -= this.weightRight[row - 1];
       this.weightRight[row - 1] = +weight;
       this.rightTotal += +weight;
